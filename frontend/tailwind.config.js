@@ -9,7 +9,10 @@ export default {
     extend: {
       fontSize:{
         sm:"var(--base)",
+        "xsm":"var(--1x25base)",
         "smx":"var(--1x5base)",
+        "smx2":"var(--1x75base)",
+        lg:"var(--3xbase)",
         xl:"var(--4xbase)"
       },
       padding:{
@@ -17,8 +20,13 @@ export default {
         sm:"var(--base)",
         "smx":"var(--1x5base)",
         md:"var(--2xbase)",
+        "mdx":"var(--2x5base)",
+        lg:"var(--3xbase)",
         xl:"var(--4xbase)",
-        "7xl":"var(--7xbase)"
+        "xlg":"var(--5xbase)",
+        "7xl":"var(--7xbase)",
+        "8xl":"var(--8xbase)",
+        "10xl":"var(--10xbase)",
       },
       colors:{
           "stoneGray":"#f5f5f4",
@@ -28,10 +36,11 @@ export default {
       },
       gap:{
         xs:"var(--05xbase)",
-        "smx":"var(--1x5base)",
         sm:"var(--base)",
+        "smx":"var(--1x5base)",
         md:"var(--2xbase)",
         "mxd":"var(--2x5base)",
+        lg:"var(--3xbase)",
         xl:"var(--4xbase)"
       }
     },
