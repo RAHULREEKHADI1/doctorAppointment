@@ -15,10 +15,16 @@ export default {
         "xsm":"var(--1x25base)",
         "smx":"var(--1x5base)",
         "smx2":"var(--1x75base)",
+        "smx3":"var(--1x625base)",
         md:"var(--2xbase)",
         "mdx":"var(--2x5base)",
+        "slg":"var(--2x75base)",
         lg:"var(--3xbase)",
-        xl:"var(--4xbase)"
+        xl:"var(--4xbase)",
+        "xlg":"var(--5xbase)",
+        "6xl":"var(--6xbase)",
+        "7xl":"var(--7xbase)",
+        "8xl":"var(--8xbase)",
       },
       padding:{
         xs:"var(--05xbase)",
@@ -34,16 +40,17 @@ export default {
         "7xl":"var(--7xbase)",
         "8xl":"var(--8xbase)",
         "10xl":"var(--10xbase)",
+        "12xl":"var(--12xbase)",
       },
       margin:{
         xs:"var(--05xbase)",
-        sm:"var(--base)",//base means 8
+        sm:"var(--base)",
         "smx":"var(--1x5base)",
         "mds":"var(--1x75base)",
         md:"var(--2xbase)",
         "mdx":"var(--2x5base)",
         lg:"var(--3xbase)",
-        "lgx":"var(--3x75base)",//8*3.75 = 30
+        "lgx":"var(--3x75base)",
         xl:"var(--4xbase)",
         "xlg":"var(--5xbase)",
         "6xl":"var(--6xbase)",
@@ -67,7 +74,12 @@ export default {
         md:"var(--2xbase)",
         "mxd":"var(--2x5base)",
         lg:"var(--3xbase)",
-        xl:"var(--4xbase)"
+        xl:"var(--4xbase)",
+         "xlg":"var(--5xbase)",
+        "6xl":"var(--6xbase)",
+        "7xl":"var(--7xbase)",
+        "8xl":"var(--8xbase)",
+        "10xl":"var(--10xbase)",
       },
       
     },
@@ -84,6 +96,7 @@ export default {
         '--1x25base': 'calc(var(--base) * 1.25)',
         '--1x5base': 'calc(var(--base) * 1.5)',
         '--1x75base': 'calc(var(--base) * 1.75)',
+        '--1x625base': 'calc(var(--base) * 1.625)',
         '--2xbase': 'calc(var(--base) * 2)',
         '--2x25base': 'calc(var(--base) * 2.25)',
         '--2x5base': 'calc(var(--base) * 2.5)',
@@ -105,6 +118,7 @@ export default {
         '--9xbase': 'calc(var(--base) * 9)',
         '--9x5base': 'calc(var(--base) * 9.5)',
         '--10xbase': 'calc(var(--base) * 10)',
+        '--12xbase':'calc(var(--base) * 12)',
         },
       });
       

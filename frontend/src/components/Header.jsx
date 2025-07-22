@@ -1,4 +1,3 @@
-import React from 'react'
 import assets from '../assets/assets'
 
 const Header = () => {
@@ -7,7 +6,7 @@ const Header = () => {
       <div className='md:w-1/2 flex flex-col items-start justify-center m-auto gap-md py-xlg md:py-[10vw] md:mb-[-lgx]'>
         <p className='text-white font-semibold text-3xl md:text-4xl lg:text-5xl leading-tight'>Book Appointment</p>
         <p className='text-white font-semibold text-3xl md:text-4xl lg:text-5xl leading-tight'>With Trusted Doctors</p>
-        <div className='flex flex-col md:flex-row items-center gap-lg text-white text-smx font-light'>
+        <div className='flex flex-col md:flex-row items-center gap-lg text-white text-smx3 font-light'>
             <img className='w-28' src={assets.group_profiles} alt=""/>
             <p>Simply browse through our extensive list of trusted doctors,<br className='hidden sm:block'/> schedule your appointment hussle free</p>
         </div>
