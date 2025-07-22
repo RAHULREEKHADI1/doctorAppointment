@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom'
 const TopDoctors = () => {
     const navigate = useNavigate();
   return (
-    <div className='flex flex-col items-center gap-md my-16 text-midGray md:mx-10'>
+    <div className='flex flex-col items-center gap-md my-8xl text-midGray md:mx-xlg'>
       <h1 className='text-3xl font-medium'>Top Doctors to Book</h1>
       <p className='sm:w-1/3 text-center text-smx2'>Simply browse through our extensive list of trusted doctors.</p>
       <div className='w-full grid grid-cols-auto gap-md pt-mdx gap-y-lg px-smx sm:px-0'>
@@ -21,7 +21,7 @@ const TopDoctors = () => {
             </div>
         ))}
       </div>
-        <button className='bg-primaryBackground text-midGray rounded-full mt-10 py-mds px-7xl'>more</button>
+        <button className='bg-primaryBackground text-midGray rounded-full mt-xlg py-mds px-7xl'>more</button>
     </div>
   )
 }

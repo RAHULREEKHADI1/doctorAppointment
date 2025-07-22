@@ -35,6 +35,22 @@ export default {
         "8xl":"var(--8xbase)",
         "10xl":"var(--10xbase)",
       },
+      margin:{
+        xs:"var(--05xbase)",
+        sm:"var(--base)",//base means 8
+        "smx":"var(--1x5base)",
+        "mds":"var(--1x75base)",
+        md:"var(--2xbase)",
+        "mdx":"var(--2x5base)",
+        lg:"var(--3xbase)",
+        "lgx":"var(--3x75base)",//8*3.75 = 30
+        xl:"var(--4xbase)",
+        "xlg":"var(--5xbase)",
+        "6xl":"var(--6xbase)",
+        "7xl":"var(--7xbase)",
+        "8xl":"var(--8xbase)",
+        "10xl":"var(--10xbase)",
+      },
       colors:{
           "stoneGray":"#f5f5f4",
           "lightGray":"#9ca3af",
