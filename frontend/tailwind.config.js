@@ -7,11 +7,16 @@ export default {
   ],
   theme: {
     extend: {
+      gridTemplateColumns: {
+        'auto': 'repeat(auto-fill, minmax(200px, 1fr))',
+      },
       fontSize:{
         sm:"var(--base)",
         "xsm":"var(--1x25base)",
         "smx":"var(--1x5base)",
         "smx2":"var(--1x75base)",
+        md:"var(--2xbase)",
+        "mdx":"var(--2x5base)",
         lg:"var(--3xbase)",
         xl:"var(--4xbase)"
       },
@@ -19,11 +24,13 @@ export default {
         xs:"var(--05xbase)",
         sm:"var(--base)",
         "smx":"var(--1x5base)",
+        "mds":"var(--1x75base)",
         md:"var(--2xbase)",
         "mdx":"var(--2x5base)",
         lg:"var(--3xbase)",
         xl:"var(--4xbase)",
         "xlg":"var(--5xbase)",
+        "6xl":"var(--6xbase)",
         "7xl":"var(--7xbase)",
         "8xl":"var(--8xbase)",
         "10xl":"var(--10xbase)",
@@ -32,7 +39,10 @@ export default {
           "stoneGray":"#f5f5f4",
           "lightGray":"#9ca3af",
           "midGray":"#4b5563",
-          "primary":"#5f6fff"
+          "primary":"#5f6fff",
+          "primaryBackground":"#eff6ff",
+          "bluish":"#bfdbfe",
+          "darkGray":"#111827",
       },
       gap:{
         xs:"var(--05xbase)",
@@ -42,7 +52,8 @@ export default {
         "mxd":"var(--2x5base)",
         lg:"var(--3xbase)",
         xl:"var(--4xbase)"
-      }
+      },
+      
     },
   },
   plugins: [
