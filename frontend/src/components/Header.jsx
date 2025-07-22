@@ -4,7 +4,7 @@ import assets from '../assets/assets'
 const Header = () => {
   return (
     <div className='flex flex-col md:flex-row flex-wrap bg-primary rounded-lg px-lg md:px-xlg lg:px-10xl'>
-      <div className='md:w-1/2 flex flex-col items-start justify-center m-auto gap-md py-xlg md:py-[10vw] md:mb-[-30px]'>
+      <div className='md:w-1/2 flex flex-col items-start justify-center m-auto gap-md py-xlg md:py-[10vw] md:mb-[-lgx]'>
         <p className='text-white font-semibold text-3xl md:text-4xl lg:text-5xl leading-tight'>Book Appointment</p>
         <p className='text-white font-semibold text-3xl md:text-4xl lg:text-5xl leading-tight'>With Trusted Doctors</p>
         <div className='flex flex-col md:flex-row items-center gap-lg text-white text-smx font-light'>
