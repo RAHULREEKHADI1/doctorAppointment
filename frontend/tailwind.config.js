@@ -61,11 +61,14 @@ export default {
       colors:{
           "stoneGray":"#f5f5f4",
           "lightGray":"#9ca3af",
+          "dimGray":"#d1d5db",
           "midGray":"#4b5563",
           "primary":"#5f6fff",
           "primaryBackground":"#eff6ff",
           "bluish":"#bfdbfe",
           "darkGray":"#111827",
+          "lightIndigo":"#e0e7ff",
+          
       },
       gap:{
         xs:"var(--05xbase)",
