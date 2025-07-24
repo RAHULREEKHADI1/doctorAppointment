@@ -12,7 +12,8 @@ const doctorSchema = new mongoose.Schema({
     },
     password:{
         type:String,
-        required:true
+        required:true,
+        select:false
     },
     image:{
         type:String,
@@ -36,7 +37,8 @@ const doctorSchema = new mongoose.Schema({
     },
     available:{
         type:Boolean,
-        required:true
+        required:true,
+        default:false
     },
     fees:{
         type:Number,
