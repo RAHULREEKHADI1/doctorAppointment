@@ -1,6 +1,7 @@
 import { useContext, useState } from 'react';
 import AdminContext from '../context/AdminContext';
 import axios from 'axios';
+import {toast} from 'react-toastify';
 
 const Login = () => {    
     const [state,setState] = useState('Admin');
@@ -13,21 +14,23 @@ const Login = () => {
         event.preventDefault();
         
         try{
-            if(state==='Admin'){                                
-                const {data} =await axios.post(backendUrl+'/api/admin/login',{email,password});
+            if(state==='Admin'){        
+                const {data} =await axios.post(backendUrl+'/api/admin/login',{email,password},{
+                validateStatus: function (status) {
+                return status === 200 || status === 401;
+                },
+            });                                
                 if(data.success){
-                    localStorage.setItem('aToken',data.token)
-                    const tokenDedo = localStorage.getItem('aToken');
-                    console.log(tokenDedo,"    hi tehrerjfwdd y h mera naya token");
-                    
+                    localStorage.setItem('aToken',data.token)                    
                     setAToken(data.token);
-                    console.log(data.token);
+                    toast.success("Logged in successfully")
+                }else{                    
+                    toast.error(data.message)
                 }
-            }else{                
             }
         }
-        catch(err){
-            console.log(err);
+        catch(err){            
+            console.log(err.message);
         }
     }
 
