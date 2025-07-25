@@ -7,13 +7,13 @@ const AddDoctor = () => {
 
   const [formData,setFormData] = useState({
     docImg:false,
-    doctorName:'',
-    doctorEmail:'',
-    doctorPassword:'',
+    name:'',
+    email:'',
+    password:'',
     experience:'',
     fees:'',
     speciality:'',
-    education:'',
+    degree:'',
     address1:'',
     address2:'',
     about:''
@@ -41,19 +41,37 @@ const AddDoctor = () => {
       Object.entries(formData).forEach(([key,value])=>{
       payload.append(key,value);
       })      
+      payload.append('address', JSON.stringify({
+        line1: formData.address1,
+        line2: formData.address2
+      })); 
       for (let [key, value] of payload.entries()) {
         console.log(`${key}: ${value}`);
       }
-      const {data} = await axios.post(backendUrl+'/api/admin/add-doctor',payload,{headers:{aToken}})
+      const {data} = await axios.post(backendUrl+'/api/admin/add-doctor',payload,{withCredentials:true},)
       console.log(data,"coming or not");
       
       if(data.success){
         toast.success("Doctor registered successfully")
+        setFormData({
+          docImg: false,
+          name: '',
+          email: '',
+          password: '',
+          experience: '',
+          fees: '',
+          speciality: '',
+          degree: '',
+          address1: '',
+          address2: '',
+          about: ''
+        });
       }else{
         toast.error(data.message);
       }
     }catch(err){
-      console.log("is ther eany eror here");
+      console.log(err);
+      toast.error(err.message)
       
     }
   }
@@ -72,16 +90,16 @@ const AddDoctor = () => {
         <div className='flex flex-col lg:flex-row items-start gap-xlg text-midGray'>
           <div className='w-full lg:flex-1 flex flex-col gap-md'>
             <div className='flex-1 flex flex-col gap-xs'>
-              <label htmlFor="doctorName">Doctor Name</label>
-              <input className='border rounded px-smx py-sm' type="text" id="doctorName" name="doctorName" placeholder="Name" value={formData.doctorName} onChange={handleChange} required />
+              <label htmlFor="name">Doctor Name</label>
+              <input className='border rounded px-smx py-sm' type="text" id="name" name="name" placeholder="Name" value={formData.name} onChange={handleChange} required />
             </div>
             <div className='flex-1 flex flex-col gap-xs'>
-              <label htmlFor="doctorEmail">Doctor Email</label>
-              <input className='border rounded px-smx py-sm' type="email" id="doctorEmail" name="doctorEmail" placeholder="Email" value={formData.doctorEmail} onChange={handleChange} required />
+              <label htmlFor="email">Doctor Email</label>
+              <input className='border rounded px-smx py-sm' type="email" id="email" name="email" placeholder="Email" value={formData.email} onChange={handleChange} required />
             </div>
             <div className='flex-1 flex flex-col gap-xs'>
-              <label htmlFor="doctorPassword">Password</label>
-              <input className='border rounded px-smx py-sm' type="password" id="doctorPassword" name="doctorPassword" placeholder="Password" value={formData.doctorPassword} onChange={handleChange} required />
+              <label htmlFor="password">Password</label>
+              <input className='border rounded px-smx py-sm' type="password" id="password" name="password" placeholder="Password" value={formData.password} onChange={handleChange} required />
             </div>
             <div className='flex-1 flex flex-col gap-xs'>
               <label htmlFor="experience">Experience (in years)</label>
@@ -118,8 +136,8 @@ const AddDoctor = () => {
               </select>
             </div>
             <div className='flex-1 flex flex-col gap-xs'>
-              <label htmlFor="education">Education</label>
-              <input className='border rounded px-smx py-sm' type="text" id="education" name="education" placeholder="Education" value={formData.education} onChange={handleChange} required />
+              <label htmlFor="degree">Degree</label>
+              <input className='border rounded px-smx py-sm' type="text" id="degree" name="degree" placeholder="degree" value={formData.degree} onChange={handleChange} required />
             </div>
             <div className='flex-1 flex flex-col gap-xs'>
               <label>Address</label>

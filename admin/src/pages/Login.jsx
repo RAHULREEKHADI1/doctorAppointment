@@ -16,8 +16,6 @@ const Login = () => {
         try{
             if(state==='Admin'){        
                 const {data} =await axios.post(backendUrl+'/api/admin/login',{email,password},{
-                    withCredentials:true
-                },{
                 validateStatus: function (status) {
                 return status === 200 || status === 401;
                 },
