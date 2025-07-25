@@ -12,8 +12,8 @@ import AllAppointment from './pages/Admin/AllAppointment';
 import AddDoctor from './pages/Admin/AddDoctor';
 
 const App = () => {
-  const {aToken} = useContext(AdminContext);
-  return aToken ?(
+  const {token} = useContext(AdminContext);
+  return token ?(
     <div className='bg-[#f8f9fd]'>
       <ToastContainer/>
       <Navbar/>

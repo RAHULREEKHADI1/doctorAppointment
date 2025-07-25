@@ -5,12 +5,12 @@ import assets from '../assets/assets'
 
 const Sidebar = () => {
 
-  const {aToken} = useContext(AdminContext);
+  const {token} = useContext(AdminContext);
 
   return (
     <div className='min-h-screen border-r bg-white'>
       {
-        aToken && <ul className='text-[#515151] mt-mdx'>
+        token && <ul className='text-[#515151] mt-mdx'>
           <NavLink className={({isActive})=> `flex items-center gap-smx p-smx md:px-xl md:min-w-72 cursor-pointer ${isActive && 'bg-[#f2f3ff] border-r-4 border-primary'}`} to={'/admin-dashboard'}>
             <img src={assets.home_icon} alt=''/>
             <p>Dashboard</p>

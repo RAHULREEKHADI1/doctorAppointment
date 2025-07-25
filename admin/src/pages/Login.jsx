@@ -8,7 +8,7 @@ const Login = () => {
     const [email,setEmail] = useState('');
     const [password,setPassword] = useState('');
 
-    const {setAToken,backendUrl} = useContext(AdminContext);
+    const {setToken,backendUrl} = useContext(AdminContext);
 
     const onSubmitHandler = async(event)=>{        
         event.preventDefault();
@@ -21,8 +21,8 @@ const Login = () => {
                 },
             });                                
                 if(data.success){
-                    localStorage.setItem('aToken',data.token)                    
-                    setAToken(data.token);
+                    localStorage.setItem('token',data.token)                    
+                    setToken(data.token);
                     toast.success("Logged in successfully")
                 }else{                    
                     toast.error(data.message)

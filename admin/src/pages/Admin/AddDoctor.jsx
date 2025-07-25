@@ -30,7 +30,7 @@ const AddDoctor = () => {
               : value,
       }));
   };
-  const {backendUrl,aToken} = useContext(AdminContext);
+  const {backendUrl,token} = useContext(AdminContext);
   const onSubmitHandler = async(event)=>{
     event.preventDefault();
     try{      
@@ -48,7 +48,7 @@ const AddDoctor = () => {
       for (let [key, value] of payload.entries()) {
         console.log(`${key}: ${value}`);
       }
-      const {data} = await axios.post(backendUrl+'/api/admin/add-doctor',payload,{withCredentials:true},)
+      const {data} = await axios.post(backendUrl+'/api/admin/add-doctor',payload,{headers:{token:token}},)
       console.log(data,"coming or not");
       
       if(data.success){

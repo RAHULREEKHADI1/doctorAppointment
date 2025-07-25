@@ -1,4 +1,4 @@
-import z, { success } from 'zod';
+import z from 'zod';
 import bcrypt from 'bcrypt'; 
 import cloudinary from '../db/cloudinary.js';
 import doctorModel from '../model/doctor.model.js'
