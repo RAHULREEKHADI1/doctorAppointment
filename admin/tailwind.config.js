@@ -29,6 +29,7 @@ export default {
       padding:{
         xs:"var(--05xbase)",
         sm:"var(--base)",
+        "xsm":"var(--1x25base)",
         "smx":"var(--1x5base)",
         "mds":"var(--1x75base)",
         md:"var(--2xbase)",
