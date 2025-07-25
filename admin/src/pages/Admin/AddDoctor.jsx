@@ -22,13 +22,13 @@ const AddDoctor = () => {
   const handleChange = (e) => {
   const { name, value, type, checked, files } = e.target;
 
-  setFormData((prev) => ({
-      ...prev,
-      [name]: type === 'checkbox' ? checked
-            : type === 'file' ? files[0] || null
-            : type === 'number' ? Number(value)
-            : value,
-    }));
+    setFormData((prev) => ({
+        ...prev,
+        [name]: type === 'checkbox' ? checked
+              : type === 'file' ? files[0] || null
+              : type === 'number' ? Number(value)
+              : value,
+      }));
   };
   const {backendUrl,aToken} = useContext(AdminContext);
   const onSubmitHandler = async(event)=>{
@@ -39,14 +39,22 @@ const AddDoctor = () => {
       }
       const payload = new FormData();
       Object.entries(formData).forEach(([key,value])=>{
-        payload.append(key,value);
-      })
-      payload.forEach(([key, value]) => {
+      payload.append(key,value);
+      })      
+      for (let [key, value] of payload.entries()) {
         console.log(`${key}: ${value}`);
-      });
-      // const {data} = await axios.post(backendUrl+'/api/admin/add-doctor',formData,{headers:{aToken}})
+      }
+      const {data} = await axios.post(backendUrl+'/api/admin/add-doctor',payload,{headers:{aToken}})
+      console.log(data,"coming or not");
+      
+      if(data.success){
+        toast.success("Doctor registered successfully")
+      }else{
+        toast.error(data.message);
+      }
     }catch(err){
-
+      console.log("is ther eany eror here");
+      
     }
   }
 
@@ -65,21 +73,20 @@ const AddDoctor = () => {
           <div className='w-full lg:flex-1 flex flex-col gap-md'>
             <div className='flex-1 flex flex-col gap-xs'>
               <label htmlFor="doctorName">Doctor Name</label>
-              <input className='border rounded px-smx py-sm' type="text" id="doctorName" name="doctorName" placeholder="Name" value={formData.name} onChange={handleChange} required />
+              <input className='border rounded px-smx py-sm' type="text" id="doctorName" name="doctorName" placeholder="Name" value={formData.doctorName} onChange={handleChange} required />
             </div>
             <div className='flex-1 flex flex-col gap-xs'>
               <label htmlFor="doctorEmail">Doctor Email</label>
-              <input className='border rounded px-smx py-sm' type="email" id="doctorEmail" name="doctorEmail" placeholder="Email" value={formData.email} onChange={handleChange} required />
+              <input className='border rounded px-smx py-sm' type="email" id="doctorEmail" name="doctorEmail" placeholder="Email" value={formData.doctorEmail} onChange={handleChange} required />
             </div>
             <div className='flex-1 flex flex-col gap-xs'>
               <label htmlFor="doctorPassword">Password</label>
-              <input className='border rounded px-smx py-sm' type="password" id="doctorPassword" name="doctorPassword" placeholder="Password" value={formData.password} onChange={handleChange} required />
+              <input className='border rounded px-smx py-sm' type="password" id="doctorPassword" name="doctorPassword" placeholder="Password" value={formData.doctorPassword} onChange={handleChange} required />
             </div>
             <div className='flex-1 flex flex-col gap-xs'>
               <label htmlFor="experience">Experience (in years)</label>
               <select className='border rounded px-smx py-xsm' id="experience" name="experience" value={formData.experience} onChange={handleChange} required>
                 <option value="" disabled>Select experience</option>
-                <option value="0">0 years</option>
                 <option value="1">1 year</option>
                 <option value="2">2 years</option>
                 <option value="3">3 years</option>
