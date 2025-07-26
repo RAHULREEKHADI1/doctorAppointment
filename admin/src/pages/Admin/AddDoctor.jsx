@@ -71,7 +71,7 @@ const AddDoctor = () => {
       }
     }catch(err){
       console.log(err);
-      toast.error(err.message)
+      toast.error(err?.response?.data.message)
       
     }
   }

@@ -73,6 +73,7 @@ export default {
       },
       gap:{
         xs:"var(--05xbase)",
+        "xm":"var(--0x75base)",
         sm:"var(--base)",
         "smx":"var(--1x5base)",
         md:"var(--2xbase)",

@@ -96,4 +96,16 @@ export const adminLogin = async(req,res)=>{
         });
     }
 }
+
+export const allDoctors = async (req,res)=>{
+    try{
+        const doctor = await doctorModel.find({});
+        return res.json({success:true,doctor,message:"Fetched doctor successfully"})
+    }
+    catch(error){
+        console.log(error);
+        return res.status(500).json({message:'Internal server error'});
+    }
+}
+
 export default addDoctor;
