@@ -77,9 +77,9 @@ const AddDoctor = () => {
   }
 
   return (
-    <form onSubmit={onSubmitHandler} className='m-mdx w-full'>
-      <p className='mb-smx text-lg font-medium '>Add Doctor</p>
-      <div className='bg-white p-xl border rounded w-full max-w-4xl max-h-[80vh] overflow-y-scroll'>
+    <form onSubmit={onSubmitHandler} className='my-mdx mx-smx sm:mx-mdx w-full'>
+      <p className='mb-smx text-mdx font-normal sm:text-lg sm:font-medium pt-xs'>Add Doctor</p>
+      <div className='bg-white p-smx sm:p-xl border rounded w-full max-w-4xl max-h-[80vh] overflow-y-scroll'>
         <div className='flex items-center gap-md mb-xl text-gray-500'>
           <label htmlFor='doc_img'>
             <img className='w-16 bg-lightGray rounded-full cursor-pointer' src={formData.docImg? URL.createObjectURL(formData.docImg) :assets.upload_area} alt=''/>
