@@ -27,11 +27,15 @@ const Appointment = () => {
     getAvailableSlots();
   },[docInfo])
 
+  const removeBackground = (imageUrl) =>{
+    return imageUrl.replace('/upload/','/upload/e_background_removal/')
+  }
+
   return docInfo && (
     <div className='mt-xl'>
       <div className='flex flex-col sm:flex-row gap-md'>
         <div>
-          <img className='bg-primary w-full sm:max-w-72 rounded-lg' src={docInfo.image} alt=''/>
+          <img className='bg-primary w-full max-h-80 sm:max-w-72 rounded-lg' src={removeBackground(docInfo.image)} alt=''/>
         </div>
         <div className='flex-1 border border-gray-400 rounded-lg p-xl py-xl bg-white mx-2 sm:mx-0 mt-[-10xl] sm:mt-0'>
           <p className='flex items-center gap-sm text-lg font-medium text-darkGray'>{docInfo.name}
