@@ -18,7 +18,9 @@ const Doctors = () => {
   useEffect(()=>{
     applyFilter()    
   },[doctors,speciality]);
-
+  const removeBackground = (imageUrl)=>{
+    return imageUrl.replace('/upload/','/upload/e_background_removal/');
+  }
   return (
     <div>
       <p className='text-midGray'>Browse through the doctors specialist.</p>
@@ -34,8 +36,8 @@ const Doctors = () => {
       <div className='w-full grid grid-cols-auto gap-md gap-y-lg'> 
           {
             filterDoc.map((item,idx)=>(           
-              <div key={idx}  onClick={()=> (navigate(`/appointment/${item._id}`,scrollTo(0,0)))} className='border border-bluish rounded-xl overflow-hidden cursor-pointer hover:translate-y-[-10px] transition-all duration-500' >
-                <img  className='bg-primaryBackground' src={item.image} alt=''/>
+              <div key={idx}  onClick={()=> (navigate(`/appointment/${item._id}`,scrollTo(0,0)))} className='border border-bluish rounded-xl max-w-56 overflow-hidden cursor-pointer hover:translate-y-[-10px] transition-all duration-500' >
+                <img  className='h-56 min-w-full bg-primaryBackground' src={removeBackground(item.image)} alt=''/>
                 <div className='p-md'>
                     <div className='flex items-center gap-sm text-center text-smx2'>
                         <p className='w-2 h-2 bg-green-500 rounded-full'></p><p>Available</p>
