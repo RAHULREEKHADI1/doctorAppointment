@@ -57,6 +57,7 @@ export default {
         "7xl":"var(--7xbase)",
         "8xl":"var(--8xbase)",
         "10xl":"var(--10xbase)",
+        "14xl":"var(--14xbase)",
       },
       colors:{
           "stoneGray":"#f5f5f4",
@@ -122,6 +123,7 @@ export default {
         '--9x5base': 'calc(var(--base) * 9.5)',
         '--10xbase': 'calc(var(--base) * 10)',
         '--12xbase':'calc(var(--base) * 12)',
+        '--14xbase':'calc(var(--base) * 14)',
         },
       });
       
