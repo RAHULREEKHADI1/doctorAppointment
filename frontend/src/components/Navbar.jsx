@@ -23,16 +23,16 @@ const Navbar = () => {
             <li className='py-xs'>All Doctors</li>
             <hr className='border-none outline-none h-0.5 bg-primary w-3/5 m-auto hidden'/>
           </NavLink>
-          <NavLink to='about'>
+          <NavLink to='/about'>
             <li className='py-xs'>About</li>
             <hr className='border-none outline-none h-0.5 bg-primary w-3/5 m-auto hidden'/>
           </NavLink>
-          <NavLink to='contacts'>
+          <NavLink to='/contacts'>
             <li className='py-xs'>Contacts</li>
             <hr className='border-none outline-none h-0.5 bg-primary w-3/5 m-auto hidden'/>
           </NavLink>
         </ul>
-        <div className='flex items-center gap-xl'>
+        <div className='flex items-center gap-md md:gap-xl'>
           {token 
           ? <div className='flex items-center gap-sm cursor-pointer group relative'>
               <img className='rounded-full w-8' src={assets.profile_pic} alt=""/>
@@ -47,6 +47,19 @@ const Navbar = () => {
           </div>:
           <button onClick={handleClick} className='bg-primary text-white font-light px-xl py-smx rounded-full hidden md:block'>Create account</button>
           }
+          <img onClick={()=> setShowMenu(true)} className='w-6 md:hidden' src={assets.menu_icon} alt='' />
+          <div className={`${showMenu ? "fixed w-full": 'h-0 w-0'} md:hidden right-0 top-0 bottom-0 z-20 overflow-hidden bg-white transition-all`}>
+            <div className='flex items-center justify-between px-md py-lg'>
+              <img className='w-36' src={assets.logo} alt="" />
+              <img className='w-7' onClick={()=> setShowMenu(false)} src={assets.cross_icon} alt="" />
+            </div>
+            <ul className='flex flex-col items-center gap-sm mt-md px-md text-mdx font-medium'>
+              <NavLink onClick={()=>setShowMenu(false)} to='/'><p className='rounded inline-block px-md py-xs font-normal'>Home</p></NavLink>
+              <NavLink onClick={()=>setShowMenu(false)} to='/doctors'><p className='rounded inline-block px-md py-xs font-normal'>All Doctors</p></NavLink>
+              <NavLink onClick={()=>setShowMenu(false)} to='/about'><p className='rounded inline-block px-md py-xs font-normal'>About</p></NavLink>
+              <NavLink onClick={()=>setShowMenu(false)} to='/contacts'><p className='rounded inline-block px-md py-xs font-normal'>Contacts</p></NavLink>
+            </ul>
+          </div>
         </div>
     </div>
   )

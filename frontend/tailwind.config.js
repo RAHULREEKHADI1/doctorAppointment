@@ -27,7 +27,7 @@ export default {
         "8xl":"var(--8xbase)",
       },
       padding:{
-        xs:"var(--05xbase)",
+        xs:"var(--0x5base)",
         sm:"var(--base)",
         "smx":"var(--1x5base)",
         "mds":"var(--1x75base)",
@@ -43,7 +43,7 @@ export default {
         "12xl":"var(--12xbase)",
       },
       margin:{
-        xs:"var(--05xbase)",
+        xs:"var(--0x5base)",
         sm:"var(--base)",
         "smx":"var(--1x5base)",
         "mds":"var(--1x75base)",
@@ -72,7 +72,7 @@ export default {
           
       },
       gap:{
-        xs:"var(--05xbase)",
+        xs:"var(--0x5base)",
         sm:"var(--base)",
         "smx":"var(--1x5base)",
         md:"var(--2xbase)",
