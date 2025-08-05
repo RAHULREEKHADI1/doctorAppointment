@@ -34,7 +34,7 @@ const userSchema = new mongoose.Schema({
         type:String,
         default:"Not selected"
     },
-    phoneNumber:{
+    phone:{
         type:String,
         default:"0000000000"
     }

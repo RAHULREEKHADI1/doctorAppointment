@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import assets from '../assets/assets';
 import {NavLink, useNavigate} from 'react-router-dom';
+import { AppContext } from '../context/AppContext';
 
 const Navbar = () => {
   const navigate = useNavigate();
@@ -9,7 +10,12 @@ const Navbar = () => {
   }
 
   const [showMenu,setShowMenu] = useState(false);
-  const [token,setToken] = useState(true);
+  const {userToken,setUserToken,userData} = useContext(AppContext);
+
+  const logout = ()=>{
+    setUserToken(false);
+    localStorage.removeItem('token');
+  }
 
   return (
     <div className='flex items-center justify-between p-md border-b border-lightGray'>
@@ -33,15 +39,15 @@ const Navbar = () => {
           </NavLink>
         </ul>
         <div className='flex items-center gap-md md:gap-xl'>
-          {token 
+          {userToken && userData
           ? <div className='flex items-center gap-sm cursor-pointer group relative'>
-              <img className='rounded-full w-8' src={assets.profile_pic} alt=""/>
+              <img className='rounded-full w-8' src={userData.image} alt=""/>
               <img className='w-2.5 ' src={assets.dropdown_icon} alt=""/>
               <div className='absolute top-0 pt-7xl text-smx font-medium text-midGray z-20 hidden group-hover:block '>
                 <div className='min-w-48 rounded flex flex-col gap-smx p-smx bg-stoneGray  '>
                   <p onClick={()=>{navigate('/my-profile')}} className='hover:text-black'>My Profile</p>
                   <p onClick={()=>{navigate('/my-appointment')}} className='hover:text-black'>My Appointments</p>
-                  <p onClick={()=>{setToken(false)}} className='hover:text-black'>Logout</p>
+                  <p onClick={logout} className='hover:text-black'>Logout</p>
                 </div>
               </div>
           </div>:
