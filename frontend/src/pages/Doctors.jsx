@@ -23,7 +23,7 @@ const Doctors = () => {
     return imageUrl.replace('/upload/','/upload/e_background_removal/');
   }
   return (
-    <div>
+    <div className='py-xlg'>
       <p className='text-midGray'>Browse through the doctors specialist.</p>
       <div className='flex flex-col sm:flex-row mt-lg gap-mxd items-start'>
         <button className={`py-xs px-smx border rounded text-smx2 transition-all sm:hidden ${showFilter ? 'bg-primary text-white':''} `} onClick={()=> setShowFilter(prev => !prev)}>Filters</button>
